@@ -44,19 +44,19 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function (table, cols, vals, cb) {
+  insertOne: function (table, col, val, cb) {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += col.toString();
     queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
+    queryString += "VALUES ('";
+    queryString += val.toString();
+    queryString += "') ";
 
-    //console.log(queryString);
+    console.log(queryString);
 
-    connection.query(queryString, vals, function (err, result) {
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }

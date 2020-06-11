@@ -1,0 +1,9 @@
+ul {
+    list-style-type: none;
+}
+
+body {
+    background-image: linear-gradient(white, lightblue);
+}
+/* I want to hide the buttons after item has been devoured. */
+/* Make the carousel screen wide possibly */

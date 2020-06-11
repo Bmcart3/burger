@@ -12,9 +12,9 @@
 $(function() {
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
-      var newDevoured = $(this).data("newdevoured");
-      console.log("devoured was clicked");
-  
+      var newDevoured = true;//$(this).data("newdevoured");
+      //console.log("devoured was clicked");
+      console.log(newDevoured);
       var newDevouredObj = {
         devoured: newDevoured
       };

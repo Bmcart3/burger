@@ -1,47 +1,49 @@
-<h1>Burgers</h1>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Devoured burgers?</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="bu">Burger Name:</label>
-        <input type="text" id="bu" name="name">
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">Make a Burger, Devour a Burger</h1>
+        </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <h3 class = "text-left">Burgers awaiting to be eaten...</h3>
 
-    <button type="submit" id = "burgerAdd">Add Burger</button>
-</form>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <h3 class = "text-right">Devoured burgers?</h3>
 
-<script>
-    $("#burgerAdd").on("click", function(event) {
-        event.preventDefault();
-        var testObj = {
-            burger_name: $("#bu").val().trim()
-        };
-        $.ajax({
-            url: "/api/burgers",
-            method: "POST",
-            data: testObj
-        })
-        .then(function(response) {
-            console.log(response);
-        })
-    });
-</script>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <h2>Add a burger</h2>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="bu"></label>
+                    <input type="text" id="bu" name="name">
+                    <button type="submit">Add Burger</button>
+                </div>
+
+                
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+

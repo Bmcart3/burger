@@ -5,25 +5,3 @@
 		{{#if devoured}}Devoured{{else}}Devour{{/if}}
 	</button>
 </li>
-
-
-
-<script>
-	$(".change-devoured").on("click", function(event) {
-        event.preventDefault();
-        const id = $(this).data("id");
-		const newDevoured = $(this).data("newdevoured");
-		//console.log(newDevoured);
-		const newDevouredObj = {
-			devoured: newDevoured
-		}
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-			data: newDevoured
-        })
-        .then(function() {
-            console.log("Changed burger state to", newDevoured);
-			location.reload();
-        });
-    });
-</script>

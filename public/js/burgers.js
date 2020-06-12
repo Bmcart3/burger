@@ -1,18 +1,8 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
-// window.onload = function() {
-//   if (window.jQuery) {  
-//       // jQuery is loaded  
-//       alert("Yeah!");
-//   } else {
-//       // jQuery is not loaded
-//       alert("Doesn't Work");
-//   }
-// }
 
 $(function() {
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
-      var newDevoured = true;//$(this).data("newdevoured");
+      var newDevoured = true;
       //console.log("devoured was clicked");
       console.log(newDevoured);
       var newDevouredObj = {
@@ -38,8 +28,6 @@ $(function() {
       console.log("it was clicked");
   
       var newBurger = {burger_name: $("#bu").val().trim()};
-        //Do i need devoured:??
-      
   
       // Send the POST request.
       $.ajax("/api/burgers", {

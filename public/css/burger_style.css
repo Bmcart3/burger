@@ -4,6 +4,6 @@ ul {
 
 body {
     background-image: linear-gradient(white, lightblue);
+    height: 100%;
 }
-/* I want to hide the buttons after item has been devoured. */
-/* Make the carousel screen wide possibly */
+
